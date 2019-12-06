@@ -7,8 +7,8 @@
       Case Problem 2
 
       Spice Bowl Payment Form
-      Author: 
-      Date:   
+      Author: Kevin Ramirez
+      Date:   12-5-19
 
       Filename:   sb_payment.html
 
@@ -19,11 +19,20 @@
    <title>Spice Bowl Payment Form</title>
    <link href="sb_reset.css" rel="stylesheet" />
    <link href="sb_styles.css" rel="stylesheet" />
+   <link href="sb_forms.css" rel="stylesheet" />
+   <link href="sb_validate.css" rel="stylesheet" />
+   <script src="cg_script.js"></script>
 </head>
 
 <body>
    <header>
       <img src="sb_logo.png" alt="The Spice Bowl" />
+      <form id="login" method="POST" action="http://www.example.com/sb/login">
+      <input id="userBox" name="username" placeholder="Username">
+      <input id="pwdBox" name="password" placeholder="password">
+
+
+      </form>
 
       <nav> <a id="navicon" href="#"><img src="sb_navicon.png" alt="" /></a>
          <ul>
@@ -38,6 +47,32 @@
    
    <section>
       <h1>Payment Form</h1>
+      <form id="payment" method="POST" action="http://www.example.com/sb/payment">
+         <fieldset id="billing">
+            <legend>Billing Information (Required)</legend>
+
+            <label for="firstBox">First Name*</label>
+         <input id="firstBox" placeholder="First" name="fName" required type="text">
+
+         <label for="lName">Last Name*</label>
+         <input id="lnBox" placeholder="Last" name="lName" required type="text">
+
+         <label for="street">Street</label>
+         <input name="custStreet" id="street" type="text"/>
+
+         <label for="street">Street</label>
+         <input name="custStreet" id="street" type="text"/>
+
+         <label for="state">State</label>
+         <input name="custState" id="state" type="text" value="Florida" maxlength="2s"/>
+
+         <label for="zip">Postal code</label>
+         <input name="custZip" id="zip" type="text" placeholder="#### (-###" pattern="^\d {5} $ (-\d {4})$ "/>
+   
+         <label for="phone">Phone Number</label>
+         <input name="custPhone" id="phone" placeholder="(###)-###-####" type="tel" required pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$">
+         </fieldset>
+      </form>
       
       <aside>
          <h1>Menu Ideas</h1>
